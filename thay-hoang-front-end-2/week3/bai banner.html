@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .hinh {
+      display: flex;
+      justify-content: center;
+
+      margin-top: 100px;
+    }
+
+    .light {
+      background-color: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.3);
+
+      width: 20px;
+      height: 500px;
+      margin-right: 10px;
+
+      position: relative;
+      z-index: 100;
+    }
+
+    .hinh:hover>.light {
+      animation: move 0.5s linear;
+    }
+
+    @keyframes move {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(800px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hinh">
+    <div class="light"></div>
+    <img src="./ThinkstockPhotos-642258728-1440x720.jpg" width="700px">
+  </div>
+
+</body>
+
+</html>

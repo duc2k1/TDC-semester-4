@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai2_PhanTaiDuc</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">FIT-TDC</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Question 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Question 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Question 3</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <h3>Your measuresment</h3>
+                <p>Width: 0 &lt; width &lt; 800px</p>
+                <input class="mb-3" type="text" id="width" placeholder="Enter the width">
+                <p>Height: 0 &lt; height &lt; 1000px</p>
+                <input type="text" id="height" placeholder="Enter the height">
+                <br>
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="box" checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Box
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="circle">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Circle
+                    </label>
+                </div>
+                <button class="btn btn-primary mt-3" id="drawMe">Draw me</button>
+            </div>
+            <div class="col-lg-8">
+                <h3>
+                    Your result
+                </h3>
+                <div id="drawImg" style="width: 100px;height: 100px; border-radius: 10px;" class="bg-warning">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-5 bg-dark p-5 text-center text-white">Copyright @ FIT-TDC 2019</footer>
+    <script>
+        document.getElementById("drawMe").addEventListener("click", () => {
+            const width = document.getElementById("width").value
+            const height = document.getElementById("height").value
+            if (width >= 800 || height >= 1000 || width <= 0 || height <= 0) {
+                alert("Width va Height phai nam trong gioi han cho phep")
+                return
+            }
+            const drawImg = document.getElementById("drawImg")
+            console.log(width)
+            drawImg.style.width = width + "px"
+            drawImg.style.height = height + "px"
+            //--
+            const box = document.getElementById("box").checked
+            const circle = document.getElementById("circle").checked
+            if (circle) drawImg.style.borderRadius = "50%"
+            else drawImg.style.borderRadius = "10px"
+        })
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

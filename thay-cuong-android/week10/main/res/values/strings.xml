@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="btnPre">&lt;</string>
+    <string name="btnNext">&gt;</string>
+    <string name="btnFinish">Finish</string>
+    <string name="btnExit">Exit</string>
+    <string name="resultOfTheText">Result of the text</string>
+    <string name="txtOn">True</string>
+    <string name="txtOff">False</string>
+    <string name="seA">Selection A</string>
+    <string name="seB">Selection B</string>
+    <string name="seC">Selection C</string>
+    <string name="seD">Selection D</string>
+    <string name="chA">Choice A</string>
+    <string name="chB">Choice B</string>
+    <string name="chC">Choice C</string>
+    <string name="chD">Choice D</string>
+    <string-array name="spinner_default">
+        <item>Value 1</item>
+        <item>Value 2</item>
+        <item>Value 3</item>
+        <item>Value 4</item>
+    </string-array>
+    <string name="drawerToggleOpen">Open</string>
+    <string name="drawerToggleClose">Close</string>
+</resources>

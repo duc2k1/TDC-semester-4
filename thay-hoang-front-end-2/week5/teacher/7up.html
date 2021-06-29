@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            background: yellowgreen;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        nav {
+            position: fixed;
+            top: calc(50% - 150px);
+            right: 0;
+        }
+        .side_shape_back {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 300px;
+            fill: #00ab51;
+            transition:
+                transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+                width 0.5s 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .side_shape_front {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            width: 0;
+            height: 370px;
+            fill: #fff;
+            transition: 0.5s 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        nav:hover .side_shape_back {
+            width: 300px;
+            transform: scaleY(1.75);
+        }
+        nav:hover .side_shape_front {
+            width: 230px;
+            height: 370px;
+        }
+        nav:hover ul.nav-list li {
+            transform: translateX(0);
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: right;
+            position: absolute;
+            top: 50px;
+            right: 50px;
+        }
+        nav ul.nav-list li {
+            padding: 10px 0;
+            position: relative;
+            transform: translateX(300%);
+            transition: 0.5s;
+        }
+        nav ul.nav-list li:nth-child(1) {transition-delay: 0.3s;}
+        nav ul.nav-list li:nth-child(2) {transition-delay: 0.4s;}
+        nav ul.nav-list li:nth-child(3) {transition-delay: 0.5s;}
+        nav ul.nav-list li:nth-child(4) {transition-delay: 0.6s;}
+
+        nav ul.nav-list li a {
+            text-decoration: none;
+            color: #1c2c2b;
+            display: block;
+            transition: 0.5s;
+        }
+
+        nav ul.nav-list li:hover a {
+            color: #00ab51;
+            font-weight: bold;
+            transform: translateX(-20px) scale(1.2);
+        }
+
+        nav ul.nav-list li::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            top: calc(50% - 5px);
+            /* top: 50%;
+            transform: translateY(-50%); */
+            right: -30px;
+            border: 2px solid #00ab51;
+            border-radius: 50%;
+        }
+        nav ul.nav-list li.active::before { background: #00ab51;}
+
+        nav ul.nav-list li::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: calc(50% - 10px);
+            right: -35px;
+            background: #00ab51;
+            border-radius: 50%;
+            opacity: 0;
+        }
+        nav ul.nav-list li:hover::after {
+            animation: flash 0.5s infinite;
+        }
+        @keyframes flash {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+            
+        }
+        nav ul.white-dot {
+            transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        nav ul.white-dot li {padding: 10px 0; position: relative;}
+        nav ul.white-dot li::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            top: calc(50% - 5px);
+            right: -40px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+        }
+        nav ul.white-dot li.active::before { background: #fff; }
+        nav:hover ul.white-dot {
+            right: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <svg class="side_shape_back" viewBox="0 0 130 200" preserveAspectRatio="none">
+            <path class="side_shape_back_4" d="M130,200V0c0,39.1-66.8,56.7-66.8,105.1C63.2,139.7,130,154.1,130,200z">
+            </path>
+        </svg>
+        <svg class="side_shape_front" viewBox="0 0 130 200" preserveAspectRatio="none">
+            <path class="side_shape_front_2" d="M130,200V0c0,31.9-87.8,45.3-87.8,100C42.2,151.7,130,172,130,200z">
+            </path>
+        </svg>
+        <ul class="nav-list">
+            <li class="active"><a href="#">7 up</a></li>
+            <li><a href="#">Lorem</a></li>
+            <li><a href="#">Necesatibus</a></li>
+            <li><a href="#">Adipisicing</a></li>
+        </ul>
+        <ul class="white-dot">
+            <li class="active">&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+        </ul>
+    </nav>
+</body>
+</html>

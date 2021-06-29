@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai3_PhanTaiDuc</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">FIT-TDC</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Question 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Question 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Question 3</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <h3>Your Data</h3>
+                <p>Values (Comma-separated, max 8 values)</p>
+                <input class="mb-3" type="text" id="data" placeholder="5, 25, 10">
+                <br>
+                <button class="btn btn-primary mt-3" id="drawChart">Draw chart</button>
+                <br>
+                <small>*Highest bar will not exceed 500px</small>
+            </div>
+            <div class="col-lg-8">
+                <h3>
+                    Your result
+                </h3>
+                <div class="d-flex" id="arrayImg">
+                    <div id="drawImg" style="width: 75px;height: 50px; border-radius: 10px;"
+                        class="bg-warning text-center mr-3">
+                        5
+                    </div>
+                    <div id="drawImg" style="width: 75px;height: 250px; border-radius: 10px;"
+                        class="bg-warning text-center mr-3">
+                        25
+                    </div>
+                    <div id="drawImg" style="width: 75px;height: 100px; border-radius: 10px;"
+                        class="bg-warning text-center mr-3">
+                        10
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class=" mt-5 bg-dark p-5 text-center text-white">Copyright @ FIT-TDC 2019</footer>
+    <script>
+        document.getElementById("drawChart").addEventListener("click", () => {
+            const data = document.getElementById("data").value
+            arrayData = data.split(',')
+            console.log(arrayData)
+            const toNumbers = arr => arr.map(Number);
+            arrayData = toNumbers(arrayData);
+            console.log(arrayData.length)
+            if (arrayData.length > 8 || arrayData.length == 0) {
+                alert('Phai co du lieu va gioi han 8 gia tri')
+                return
+            }
+            //tim max
+            const max = Math.max(...arrayData)
+            console.log(max)
+            const arrayImg = document.getElementById("arrayImg")
+            arrayImg.textContent = ""
+            arrayData.map((val) => {
+                const child = document.createElement("div")
+                child.textContent = val
+                child.style = "width: 75px; border-radius: 10px;"
+                if (val == max)
+                    child.style.height = `500px`
+                else
+                    child.style.height = `${500 * val / max}px`
+                child.classList = "bg-warning text-center  mr-3"
+                arrayImg.appendChild(child);
+            })
+        })
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

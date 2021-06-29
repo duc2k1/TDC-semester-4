@@ -1,0 +1,103 @@
+.side-text-options {
+  position: fixed;
+  z-index: 1;
+  font-size: 15px;
+  color: #fff;
+  left: 100px;
+  cursor: pointer;
+}
+.text-option {
+  height: 90px;
+  line-height: 90px;
+  width: 90px;
+  padding-left: 20px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: #232323;
+  position: fixed;
+  right: 0px;
+  transition: 0.3s all ease-in-out;
+}
+.text-option:nth-child(1) {
+  top: 50px;
+}
+.text-option:nth-child(2) {
+  top: 140px;
+}
+.text-option:nth-child(3) {
+  top: 230px;
+}
+.text-option:nth-child(4) {
+  top: 320px;
+}
+.text-option:nth-child(5) {
+  top: 410px;
+}
+.text-option:nth-child(1):hover {
+  width: 190px;
+}
+.side-img-options {
+  position: fixed;
+  right: 0;
+  top: 50px;
+  background-color: white;
+  box-shadow: 0 0px 25px 8px rgb(0 0 0 / 72%);
+  z-index: 2;
+}
+.img-option {
+  content: "";
+  background-image: url("https://cdn.gillion.shufflehound.com/wp-content/plugins/shufflehound-showcase-framework/sidemenu/sidemenu-icons.png");
+  width: 60px;
+  height: 60px;
+  margin: 15px;
+  padding: 10px;
+  background-color: white;
+  cursor: pointer;
+}
+.img-option:nth-child(1):hover {
+  background-position: 0px -60px;
+}
+.img-option:nth-child(2):hover {
+  background-position: 0px -180px;
+}
+.img-option:nth-child(3):hover {
+  background-position: 0px -300px;
+}
+.img-option:nth-child(4):hover {
+  background-position: 0px -420px;
+}
+.img-option:nth-child(5):hover {
+  background-position: 0px -540px;
+}
+.img-option:nth-child(1) {
+  background-position: 0px 0px;
+  margin-bottom: 30px;
+}
+.img-option:nth-child(2) {
+  background-position: 0px -120px;
+  margin-bottom: 30px;
+}
+.img-option:nth-child(3) {
+  background-position: 0px -240px;
+  margin-bottom: 30px;
+}
+.img-option:nth-child(4) {
+  background-position: 0px -360px;
+  margin-bottom: 30px;
+}
+.img-option:nth-child(5) {
+  background-position: 0px -480px;
+}
+
+body {
+  background-color: gainsboro;
+}
+
+#logo {
+  width: 90px;
+}
+
+.main {
+  border-radius: 1%;
+  box-shadow: 0 0px 25px 8px rgb(0 0 0 / 72%);
+}

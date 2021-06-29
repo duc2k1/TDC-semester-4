@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+    body {
+      background-color: brown;
+      position: relative;
+    }
+
+    nav {
+      
+    }
+
+    .side_shape_back {
+      position: absolute;
+      width: 0px;
+      height: 500px;
+      top: 100px;
+      right: 0;
+      transition: width 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    nav:hover>.side_shape_back {
+      width: 400px;
+    }
+
+    .side_shape_front {
+      position: absolute;
+      width: 100px;
+      height: 500px;
+      top: 100px;
+      right: 0px;
+      transition: width 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    nav:hover>.side_shape_front {
+      width: 400px;
+    }
+
+    .dau_cham {
+      position: absolute;
+      z-index: 100;
+      top: 300px;
+      right: 40px;
+      transition: right 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .dau_cham_con {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: green;
+      box-shadow: 0 0 0 2px white;
+      margin-bottom: 20px;
+    }
+
+    .dau_cham_con_dac_biet {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: white;
+      margin-bottom: 20px;
+    }
+
+    nav:hover>.dau_cham {
+      z-index: -100;
+      right: 30px;
+    }
+
+    .lua_chon {
+      position: absolute;
+      display: none;
+      top: 300px;
+      right: 10px;
+      transition: right 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .lua_chon_con {
+      color: black;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content:flex-end;
+    }
+
+    nav:hover>.lua_chon {
+      position: absolute;
+      right: 10px;
+      z-index: 100;
+      display: inline;  
+    }
+    .nut_lua_chon_con{
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: green;
+      box-shadow: 0 0 0 2px white;
+      margin-left: 10px;
+      margin-top:2px;
+    }
+    .nut_lua_chon_con:hover{
+      cursor: pointer;
+      animation: nut_con_hover .2s 1 linear;
+    }
+    @keyframes nut_con_hover {
+      0%{
+        box-shadow: 0 0 0 0px green;
+      }
+      100%{
+        box-shadow: 0 0 0 9px rgba(5, 223, 5,0.5);
+      }
+    }
+    p{
+      font-size: 20px;
+      transition: all .2s linear;
+    }
+    p:hover {
+      transform: scale(1.5,1.5);
+      margin-right: 30px;
+      color:green;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <svg fill="green" version="1.1" class="side_shape_front" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 130 200"
+      style="enable-background:new 0 0 130 200;" xml:space="preserve" preserveAspectRatio="none">
+      <path class="side_shape_front_2" d="M130,200V0c0,31.9-87.8,45.3-87.8,100C42.2,151.7,130,172,130,200z" />
+      <path class="side_shape_front_1" d="M130,200V0c0,31.9,0,57.8,0,100C130,137.6,130,173.6,130,200z" />
+    </svg>
+    <svg fill="white" version="1.1" class="side_shape_back" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 130 200"
+      style="enable-background:new 0 0 130 200;" xml:space="preserve" preserveAspectRatio="none">
+      <path class="side_shape_back_4" d="M130,200V0c0,39.1-66.8,56.7-66.8,105.1C63.2,139.7,130,154.1,130,200z" />
+      <path class="side_shape_back_3" d="M130,200V0c0,40.5-26.6,59.5-26.6,100C103.4,154.5,130,162.8,130,200z" />
+      <path class="side_shape_back_2" d="M130,200V0c0,31.9-13.7,57.8-13.7,100C116.3,137.6,130,173.6,130,200z" />
+      <path class="side_shape_back_1" d="M130,200V0c0,40.5,0,59.5,0,100C130,154.5,130,162.8,130,200z" />
+    </svg>
+    <div class="dau_cham">
+      <div class="dau_cham_con_dac_biet"></div>
+      <div class="dau_cham_con"></div>
+      <div class="dau_cham_con"></div>
+      <div class="dau_cham_con"></div>
+    </div>
+    <div class="lua_chon">
+      <div class="lua_chon_con">
+        <p>7UP</p>
+        <div class="nut_lua_chon_con"></div>
+      </div>
+      <div class="lua_chon_con">
+        <p>Producten</p>
+        <div class="nut_lua_chon_con"></div>
+      </div>
+      <div class="lua_chon_con">
+        <p>Geschiedenis</p>
+        <div class="nut_lua_chon_con"></div>
+      </div>
+      <div class="lua_chon_con">
+        <p>Recept</p>
+        <div class="nut_lua_chon_con"></div>
+      </div>
+    </div>
+  </nav>
+</body>
+
+</html>

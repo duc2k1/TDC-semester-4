@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            margin: 200px auto;
+            position: relative;
+            perspective: 600px;
+            color: aliceblue;
+        }
+
+        .plane {
+            width: 300px;
+            height: 300px;
+            background: orange;
+            transition: 1s;
+            transform-style: preserve-3d;
+        }
+
+        .hover {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .left-top {
+            clip-path: polygon(50% 50%, 0 33.33%, 0 0, 33.33% 0);
+        }
+
+        .top-right {
+            clip-path: polygon(50% 50%, 66.66% 0, 100% 0, 100% 33.33%);
+        }
+
+        .right-bottom {
+            clip-path: polygon(50% 50%, 100% 66.66%, 100% 100%, 66.66% 100%);
+        }
+
+        .bottom-left {
+            clip-path: polygon(50% 50%, 33.33% 100%, 0% 100%, 0% 66.66%);
+        }
+
+        .left {
+            clip-path: polygon(50% 50%, 0 33.33%, 0 66.66%);
+        }
+
+        .right {
+            clip-path: polygon(50% 50%, 100% 33.33%, 100% 66.66%);
+        }
+
+        .top {
+            clip-path: polygon(50% 50%, 33.33% 0, 66.66% 0);
+        }
+
+        .bottom {
+            clip-path: polygon(50% 50%, 33.33% 100%, 66.66% 100%);
+        }
+
+        .left-top:hover~div.plane {
+            transform: rotateX(-45deg) rotateY(45deg);
+        }
+
+        .top-right:hover~div.plane {
+            transform: rotateX(-45deg) rotateY(-45deg);
+        }
+
+        .right-bottom:hover~div.plane {
+            transform: rotateX(45deg) rotateY(-45deg);
+        }
+
+        .bottom-left:hover~div.plane {
+            transform: rotateX(45deg) rotateY(45deg);
+        }
+
+        .left:hover~div.plane {
+            transform: rotateY(45deg);
+        }
+
+        .right:hover~div.plane {
+            transform: rotateY(-45deg);
+        }
+
+        .top:hover~div.plane {
+            transform: rotateX(-45deg);
+        }
+
+        .bottom:hover~div.plane {
+            transform: rotateX(45deg);
+        }
+
+        .plane_top {
+            position: absolute;
+            width: 300px;
+            height: 50px;
+            transform: rotateX(90deg) translateY(-50px);
+            transform-origin: top;
+            background-color: rgb(255, 217, 0);
+        }
+
+        .plane_left {
+            position: absolute;
+            width: 50px;
+            height: 300px;
+            transform: rotateY(-90deg) translateX(-50px);
+            transform-origin: left;
+            background-color: rgb(151, 137, 55);
+        }
+
+        .plane_right {
+            position: absolute;
+            width: 50px;
+            height: 300px;
+            transform: translateX(250px) translateZ(-50px) rotateY(90deg);
+            transform-origin: right;
+            background-color: rgb(151, 137, 55);
+        }
+
+        .plane_bottom {
+            position: absolute;
+            width: 300px;
+            height: 50px;
+            transform: translateY(250px) translateZ(-50px) rotateX(-90deg);
+            transform-origin: bottom;
+            background-color: rgb(255, 217, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="hover left"></div>
+        <div class="hover right"></div>
+        <div class="hover top"></div>
+        <div class="hover bottom"></div>
+        <div class="hover left-top"></div>
+        <div class="hover top-right"></div>
+        <div class="hover right-bottom"></div>
+        <div class="hover bottom-left"></div>
+        <div class="plane">
+            <div class="plane_top">top</div>
+            <div class="plane_bottom">bot</div>
+            <div class="plane_left">left</div>
+            <div class="plane_right">right</div>
+        </div>
+
+    </div>
+</body>
+
+</html>

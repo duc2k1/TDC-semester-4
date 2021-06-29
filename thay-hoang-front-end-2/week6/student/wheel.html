@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 300px;
+      height: 300px;
+      margin: 100px auto;
+      position: relative;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .box__item {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: 100;
+      background: blue;
+      color: black;
+      clip-path: polygon(50% 50%, 0 21%, 0 79%);
+      line-height: 300px;
+    }
+
+    .box__child:nth-child(1) {
+      transform: rotate(0deg);
+    }
+
+    .box__child:nth-child(2) {
+      transform: rotate(120deg);
+    }
+
+    .box__child:nth-child(3) {
+      transform: rotate(240deg);
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text">
+  <div class="box">
+    <div class="box__child box__item">fsdf</div>
+    <div class="box__child box__item">sdfsdf</div>
+    <div class="box__child box__item">asdas</div>
+  </div>
+</body>
+
+</html>

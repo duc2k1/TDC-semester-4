@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kiem tra</string>
+    <string name="btnPre">&lt;</string>
+    <string name="btnNext">&gt;</string>
+    <string name="btnFinish">Kết thúc</string>
+    <string name="scrQ1">Câu hỏi 1</string>
+    <string name="scrQ2">Câu hỏi 2</string>
+    <string name="scrQ3">Câu hỏi 3</string>
+    <string name="scrQ4">Câu hỏi 4</string>
+    <string name="scrQ5">Câu hỏi 5</string>
+    <string name="txtOn">Đúng</string>
+    <string name="txtOff">Sai</string>
+    <string name="seA">Selection A</string>
+    <string name="seB">Selection B</string>
+    <string name="seC">Selection C</string>
+    <string name="seD">Selection D</string>
+    <string name="chA">Choice A</string>
+    <string name="chB">Choice B</string>
+    <string name="chC">Choice C</string>
+    <string name="chD">Choice D</string>
+    <string-array name="spinner_default">
+        <item>Gía trị 1</item>
+        <item>Gía trị 2</item>
+        <item>Gía trị 3</item>
+        <item>Gía trị 4</item>
+    </string-array>
+</resources>
