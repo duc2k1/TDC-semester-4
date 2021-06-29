@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: darkblue;
+        }
+
+        .bubble {
+            width: 30px;
+            height: 30px;
+            position: fixed;
+            bottom: -30px;
+            animation: moveY infinite linear;
+
+        }
+
+        .bubble:nth-child(1) {
+            left: 100px;
+            animation-duration: 3s;
+        }
+
+        .bubble:nth-child(2) {
+            left: 200px;
+            animation-delay: 1s;
+            animation-duration: 5s;
+        }
+
+        .bubble:nth-child(3) {
+            left: 350px;
+            animation-delay: 2.5s;
+            animation-duration: 2.5s;
+        }
+
+        .bubble:nth-child(4) {
+            left: 550px;
+            animation-delay: 3s;
+            animation-duration: 2s;
+        }
+
+        .bubble:nth-child(5) {
+            left: 700px;
+            animation-delay: 0.5s;
+            animation-duration: 4s;
+        }
+
+        .bubble::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(255, 255, 255, .5);
+            border: 1px solid #fff;
+            border-radius: 50%;
+            animation: moveX infinite ease-in-out alternate;
+        }
+
+        .bubble:nth-child(1):after {
+            animation-duration: 0.5s;
+        }
+
+        .bubble:nth-child(2):after {
+            animation-duration: 1s;
+        }
+
+        .bubble:nth-child(3):after {
+            animation-duration: 2s;
+        }
+
+        .bubble:nth-child(4):after {
+            animation-duration: 0.75;
+        }
+
+        .bubble:nth-child(5):after {
+            animation-duration: 1.5s;
+        }
+
+        @keyframes moveY {
+            0% {
+                bottom: 0;
+            }
+
+            100% {
+                bottom: 100%;
+            }
+        }
+
+        @keyframes moveX {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(50px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+</body>
+
+</html>

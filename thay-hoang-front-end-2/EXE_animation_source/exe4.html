@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .photo {
+            width: 300px;
+            position: relative;
+        }
+        .photo img {
+            width: 100%;
+        }
+        .photo::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -50px;
+            width: 50px;
+            background: linear-gradient(90deg, transparent, #fff, transparent);
+            mix-blend-mode: overlay;
+        }
+        .photo:hover::after {
+            animation: moveX 1s;
+        }
+        @keyframes moveX {
+            0% {
+                left: -50px;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="photo">
+        <img src="./public/images/02.png" alt="">
+    </div>
+</body>
+
+</html>
