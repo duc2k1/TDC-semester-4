@@ -1,0 +1,5 @@
+version: "Apple Swift version 5.1 (swiftlang-1100.0.270.13 clang-1100.0.33.7)"
+options: "472122f07efae53d3c92744afc8cb3cd"
+build_time: [1619601710, 662265000]
+inputs:
+  "/Users/longkunz/Desktop/News/Pods/KSBGradientView/KSBGradientView/Classes/KSBGradientView.swift": [1619095257, 24909067]

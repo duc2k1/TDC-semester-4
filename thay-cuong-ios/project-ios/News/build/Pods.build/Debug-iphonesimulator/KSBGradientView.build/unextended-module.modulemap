@@ -1,0 +1,10 @@
+framework module KSBGradientView {
+  umbrella header "KSBGradientView-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module KSBGradientView.__Swift {
+    exclude header "KSBGradientView-Swift.h"
+}
